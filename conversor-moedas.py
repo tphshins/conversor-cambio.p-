@@ -12,8 +12,33 @@ def converter_moeda(valor, moeda_base, moeda_alvo, taxa_conversao):
     return valor_convertido
 
 def main():
-    moeda_base = input("Digite a moeda de origem (BRL, USD, EUR, JPY, INR): ").upper()
-    moeda_alvo = input("Digite a moeda de destino (BRL, USD, EUR, JPY, INR): ").upper()
+    print("Selecione a moeda de origem:")
+    print("1. Real (BRL)")
+    print("2. Dólar (USD)")
+    print("3. Euro (EUR)")
+    print("4. Iene (JPY)")
+    print("5. Rúpias Indianas (INR)")
+
+    opcao_origem = int(input("Digite o número correspondente à moeda de origem: "))
+    opcoes = {
+        1: 'BRL',
+        2: 'USD',
+        3: 'EUR',
+        4: 'JPY',
+        5: 'INR'
+    }
+    moeda_base = opcoes[opcao_origem]
+
+    print("\nSelecione a moeda de destino:")
+    print("1. Real (BRL)")
+    print("2. Dólar (USD)")
+    print("3. Euro (EUR)")
+    print("4. Iene (JPY)")
+    print("5. Rúpias Indianas (INR)")
+
+    opcao_destino = int(input("Digite o número correspondente à moeda de destino: "))
+    moeda_alvo = opcoes[opcao_destino]
+
     valor_str = input("Digite o valor a ser convertido: ")
     valor_str = valor_str.replace(',', '.')  # Substitui vírgula por ponto
     valor = float(valor_str)
